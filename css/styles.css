@@ -57,6 +57,34 @@ img {
     margin: 0;
 }
 
+/*Grid*/
+
+@media (min-width: 768px){
+    .grid{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columnas-4{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .columnas-6{
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8{
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columnas-10{
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+    .columnas-12{
+        flex: 0 0 100%;
+    }
+}
+
 /*Header*/
 
 @media (min-width:768px) {
@@ -146,7 +174,7 @@ img {
     flex-wrap: wrap;
 }
 
-.blog, .cursos {
+.blog, .curso {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 100%;
@@ -183,6 +211,7 @@ img {
    list-style: none;
 }
 .curso{
+    padding-top: 3rem;
 padding-bottom: 3rem;
 border-bottom: 1px solid #e1e1e1;
 }
@@ -194,7 +223,7 @@ border-bottom: 1px solid #e1e1e1;
     font-weight: 700;
     font-size: 2rem;
 }
-.curso p span{
+.curso p span, .curso p.descripcion{
     font-weight: 400;
 }
 
@@ -210,10 +239,15 @@ border-bottom: 1px solid #e1e1e1;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 2rem;
+    flex: 0 0 100%;
+}
+.btn:hover{
+    cursor: pointer;
 }
 @media (min-width: 600px){
     .btn{
         display: inline-block;
+        flex: 0 0 auto;
     }
 }
 .btn-primario{
@@ -242,4 +276,34 @@ font-weight: 700;
     color: white;
     font-family: 'PT Sans', sans-serif;
     text-decoration: none;
+}
+/*Contacto*/
+.formulario-contacto{
+    background-color: white;
+    padding: 5rem;
+}
+@media (min-width: 768px){
+    .formulario-contacto{
+        margin-top: -10rem;
+    } 
+}
+.formulario-contacto .campo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]), .formulario-contacto textarea{
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 20rem;   
+}
+.formulario-contacto .enviar{
+    display: flex;
+    justify-content: flex-end;
 }
